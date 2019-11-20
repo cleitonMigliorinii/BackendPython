@@ -6,6 +6,7 @@ from flask_cors import CORS, cross_origin
 from flask_jsonpify import jsonify
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 
@@ -15,5 +16,6 @@ manager = Manager(app)
 
 manager.add_command('db', MigrateCommand)
 
-from app.models import user
-from app.controller import userWS
+from app.models import tables
+from app.controller import user_ws
+from app.controller import turma_ws
