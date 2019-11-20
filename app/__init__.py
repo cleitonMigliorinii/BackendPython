@@ -16,6 +16,4 @@ manager = Manager(app)
 
 manager.add_command('db', MigrateCommand)
 
-from app.models import tables
-from app.controller import user_ws
-from app.controller import turma_ws
+
